@@ -33,4 +33,4 @@ def scrape_covid_data(url='https://www.mohfw.gov.in/'):
 if __name__ == '__main__':
     data = scrape_covid_data()
     for idx, d in enumerate(data):
-        print (idx, d, data[d])
+        print(idx, d, data[d])
