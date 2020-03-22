@@ -1,0 +1,1 @@
+from dash_app import app as application
