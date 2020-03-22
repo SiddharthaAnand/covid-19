@@ -22,11 +22,12 @@ def scrape_covid_data(url='https://www.mohfw.gov.in/'):
     {'State' : [Total Confirmed (Indian), Total Confirmed (Foreign), Cured, Death]
     '''
     for posn in range(1, len(inner_data_html)-5, 6):
-        state_data[inner_data_html[posn].text] = [inner_data_html[posn + 1].text,
-                                                  inner_data_html[posn + 2].text,
-                                                  inner_data_html[posn + 3].text,
-                                                  inner_data_html[posn + 4].text,
-                                                  ]
+        state_data[posn] = [inner_data_html[posn].text,
+                            inner_data_html[posn + 1].text,
+                              inner_data_html[posn + 2].text,
+                              inner_data_html[posn + 3].text,
+                              inner_data_html[posn + 4].text,
+                              ]
     return state_data
 
 
