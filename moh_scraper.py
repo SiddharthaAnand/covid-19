@@ -15,8 +15,8 @@ def create_soup_object(data=None):
 def scrape_covid_data(url='https://www.mohfw.gov.in/'):
     moh_page_html = send_request(url=url)
     soup = create_soup_object(data=moh_page_html)
-    table_data_html = soup.find('table', attrs={'class': 'table table-striped table-dark'})
-    inner_data_html = table_data_html.findAll('td', attrs={'align': "'centre"})
+    table_data_html = soup.findAll('tbody')
+    inner_data_html = table_data_html[1].findAll('td')
     state_data = {}
     '''
     {'State' : [Total Confirmed (Indian), Total Confirmed (Foreign), Cured, Death]
